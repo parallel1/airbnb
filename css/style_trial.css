@@ -1,0 +1,32 @@
+html, body {
+  height: 100%;
+  width: 100%; }
+
+.navbar {
+  padding: 1% 0;
+  background-color: #ff5a5f;
+  font-size: 1.2em; }
+
+.navbar-brand {
+  min-height: 55px;
+  padding: 0 15px 5px; }
+
+#logo {
+  color: #fff;
+  font-size: 40px; }
+
+.navbar-default .navbar-nav li a {
+  color: #fff; }
+
+.navbar-nav li a:hover, .navbar-nav li a:active {
+  color: #fff; }
+
+#content_top {
+  position: relative;
+  padding-top: 150px; }
+
+#myNavbar {
+  font-family: monospace;
+  font-size: 20px; }
+
+/*# sourceMappingURL=style_trial.css.map */

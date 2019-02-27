@@ -1,3 +1,12 @@
+$colors:(
+    primary_navigation_font: #fff,
+    primary-navigation_background: #ff5a5f
+    );
+
+@function color($color-name) {
+    @return map-get($colors, $color-name)
+}    
+
 html, body{
   height: 100%;
   width: 100%;
@@ -5,7 +14,7 @@ html, body{
 
 .navbar {
     padding: 1% 0;
-    background-color: #ff5a5f;
+    background-color: color(primary-navigation_background);
     font-size: 1.2em;
     
   }
@@ -16,14 +25,14 @@ html, body{
      
   }
  #logo{
-    color: #fff;
+    color: color(primary_navigation_font);
     font-size:40px;
   }
 .navbar-default .navbar-nav li a {
-   color: #fff;
+   color: color(primary_navigation_font);
 }
   .navbar-nav li a:hover, .navbar-nav li a:active  {
-    color: #fff;
+    color: color(primary_navigation_font);
     
   }
  
@@ -35,4 +44,3 @@ html, body{
 	  font-family: monospace;
 	  font-size: 20px;
   }
- 
