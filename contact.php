@@ -26,7 +26,7 @@
                             <input type="text" name="txtPhone" class="form-control" placeholder="Your Phone Number *" value="" />
                         </div>
                         <div class="form-group">
-                            <input type="submit" name="btnSubmit" class="btnContact" value="Send Message" />
+                            <input type="submit" name="btnSubmit" class="btnContact" value="Send Message" onclick="message()" />
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -39,5 +39,10 @@
 </div>  
 
 </div>
+<script>
+function message() {
+  alert("Message saved");
+}
+</script>
 </body>
 </html>

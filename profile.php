@@ -20,6 +20,7 @@ session_start();
   <li class="list-group-item">Email: <?php echo $_SESSION['email']; ?></li>
  
   </ul>
+  <?php if($_SESSION['user_type'] == "host") { ?>
   <h2>Your Listing</h2>
   <?php
   include_once 'db_connect.php';
@@ -60,6 +61,42 @@ session_start();
       }   
      
  
+ } ?>
+ <h2>The applications for your house</h2>
+ <?php
+  $email=$_SESSION['email'];
+         $sql= "SELECT * FROM request WHERE host_email = '$email'";
+         $result = mysqli_query($connection,$sql) or die ($connection->error);
+          while ($row = mysqli_fetch_assoc($result)){  ?>
+               <ul class="list-group">
+          <li class="list-group-item">HOUSE_ID: <?php echo $row['house_id']; ?></li>
+         <li class="list-group-item">renter Email: <?php echo $row['host_email']; ?></li>
+          
+        
+          <li class="list-group-item">status: <?php echo $row['status']; ?></li>
+          </ul>
+ <?php
+  }
+  }
+  if($_SESSION['user_type'] == "renter"){ ?>
+      <p>Your requests</p>
+<?php    
+        include_once 'db_connect.php';
+        $email=$_SESSION['email'];
+         $sql= "SELECT * FROM request WHERE renter_email = '$email'";
+         $result = mysqli_query($connection,$sql) or die ($connection->error);
+          while ($row = mysqli_fetch_assoc($result)){  ?>
+               <ul class="list-group">
+          <li class="list-group-item">HOUSE_ID: <?php echo $row['house_id']; ?></li>
+         <li class="list-group-item">Host Email: <?php echo $row['host_email']; ?></li>
+          
+        
+          <li class="list-group-item">status: <?php echo $row['status']; ?></li>
+          </ul>
+              
+ <?php         }
+         
+  
  }
   ?>
    

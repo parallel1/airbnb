@@ -49,7 +49,8 @@ if (isset($_POST['search'])){
           
           
           </li>
- 
+ <li class="list-group-item">Action: <a href="request.php?house_id=<?php echo $row['id']; ?>"
+                     class="btn btn-info">Rent This House</a></li>
           </ul>
     <?php      
           //display upcoming appointments 
